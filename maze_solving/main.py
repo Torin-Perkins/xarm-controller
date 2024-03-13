@@ -1,7 +1,7 @@
 import learm
 import time
 import cv2
-import maze
+from maze_solving import maze
 import matplotlib.pylab as plt
 
 
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     cam = cv2.VideoCapture(0)
     result, img = cam.read()
     if result:
-        cv2.imwrite('img/maze_pic.jpg', img)
+        cv2.imwrite('../img/maze_pic.jpg', img)
     # wait and ensure picture was taken
     time.sleep(10)
 
@@ -139,7 +139,7 @@ if __name__ == "__main__":
             my_arm.moveToPosition(a_press)
             time.sleep(max(1, 0.1 * direction[1]))
     # show image with paths
-    rgb_img = plt.imread('img/maze_pic.jpg')
+    rgb_img = plt.imread('../img/maze_pic.jpg')
     plt.figure(figsize=(14, 14))
     plt.imshow(rgb_img)
     plt.plot(paths[0], paths[1], 'r-', linewidth=5)

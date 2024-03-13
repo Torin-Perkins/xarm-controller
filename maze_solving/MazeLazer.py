@@ -126,7 +126,7 @@ if __name__ == "__main__":
     cam = cv2.VideoCapture(0)
     result, img = cam.read()
     if result:
-        cv2.imwrite('img/maze_pic.jpg', img)
+        cv2.imwrite('../img/maze_pic.jpg', img)
     # wait and ensure picture was taken
     time.sleep(2)
 
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     time.sleep(1)
     moveLaser(my_arm, paths, start, x0, y0, step_size_up=0.65, step_size_down=0.8, step_size_h=0.83)
     # show image with paths
-    rgb_img = plt.imread('img/maze_pic.jpg')
+    rgb_img = plt.imread('../img/maze_pic.jpg')
     plt.figure(figsize=(14, 14))
     plt.imshow(rgb_img)
     plt.plot(paths[0], paths[1], 'r-', linewidth=5)
